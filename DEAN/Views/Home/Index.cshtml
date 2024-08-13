@@ -1,0 +1,137 @@
+﻿@model DEAN.Models.HealthStat
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin">
+        <div class="row">
+            <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                <h3 class="font-weight-bold">Xin Chào! Chúc bạn một ngày tốt lành</h3>
+                <h6 class="font-weight-normal mb-0">Bạn đã cập nhật thời gian biểu chưa? Hãy cho chúng tôi biết nhé <span class="text-primary">cập nhật ngay!</span></h6>
+            </div>
+            <div class="col-12 col-xl-4">
+                <div class="justify-content-end d-flex">
+                    <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
+                        <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <i class="mdi mdi-calendar"></i> ...
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
+                            <a class="dropdown-item" href="#">...</a>
+                            <a class="dropdown-item" href="#">...</a>
+                            <a class="dropdown-item" href="#">...</a>
+                            <a class="dropdown-item" href="#">...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card tale-bg">
+            <div class="card-people mt-auto">
+                <img src="images/dashboard/people.svg" alt="people">
+                <div class="weather-info">
+                    <div class="d-flex">
+                        <div>
+                            <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
+                        </div>
+                        <div class="ml-2">
+                            <h4 class="location font-weight-normal">VietNam</h4>
+                            <h6 class="font-weight-normal">HoChiMinh City</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 grid-margin transparent">
+        <div class="row">
+            <div class="col-md-6 mb-4 stretch-card transparent">
+                <div class="card card-tale">
+                    <div class="card-body">
+                        <p class="mb-4">Số bước chân của bạn ngày hôm nay</p>
+                        <p class="fs-30 mb-2">@Model.Steps</p>
+                        <p>BƯỚC/NGÀY(24h)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 stretch-card transparent">
+                <div class="card card-dark-blue">
+                    <div class="card-body">
+                        <p class="mb-4">Lượng nước đã nạp</p>
+                        <p class="fs-30 mb-2">@Model.WaterIntake</p>
+                        <p>LÍT/NGÀY(24h)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                <div class="card card-light-blue">
+                    <div class="card-body">
+                        <p class="mb-4">Bạn ngủ đủ chứ</p>
+                        <p class="fs-30 mb-2">@Model.SleepDuration</p>
+                        <p>GIỜ/NGÀY(24h)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 stretch-card transparent">
+                <div class="card card-light-danger">
+                    <div class="card-body">
+                        <p class="mb-4">...</p>
+                        <p class="fs-30 mb-2">...</p>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title">Chi tiết thông số</p>
+                <p class="font-weight-500">So sánh dữ liệu hôm nay với hôm qua</p>
+                <div class="d-flex flex-wrap mb-5">
+                    <div class="mr-5 mt-3">
+                        <p class="text-muted">Bước chân</p>
+                        <h3 class="text-primary fs-30 font-weight-medium">@Model.Steps</h3>
+                    </div>
+                    <div class="mr-5 mt-3">
+                        <p class="text-muted">Lượng nước</p>
+                        <h3 class="text-primary fs-30 font-weight-medium">@Model.WaterIntake</h3>
+                    </div>
+                    <div class="mr-5 mt-3">
+                        <p class="text-muted">Giấc ngủ</p>
+                        <h3 class="text-primary fs-30 font-weight-medium">@Model.SleepDuration</h3>
+                    </div>
+                    <div class="mt-3">
+                        <p class="text-muted">...</p>
+                        <h3 class="text-primary fs-30 font-weight-medium">...</h3>
+                    </div>
+                </div>
+                <canvas id="order-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <p class="card-title">Dữ liệu tuần</p>
+                    <a href="#" class="text-info">View all</a>
+                </div>
+                <p class="font-weight-500">Quan sát xem bạn có tiến triển gì hơn so với tuần trước không nào</p>
+                <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
+                <canvas id="sales-chart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>

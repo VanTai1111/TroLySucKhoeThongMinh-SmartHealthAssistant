@@ -1,0 +1,47 @@
+﻿@model DEAN.Models.HealthStat
+
+@{
+    ViewBag.Title = "Thông tin người dùng";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Cập nhật thông tin</h4>
+                <p class="card-description">
+                    Cập nhật ngay!
+                </p>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Date, "Ngày cập nhật")
+                        @Html.TextBoxFor(model => model.Date, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+                        @Html.ValidationMessageFor(model => model.Date)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.WaterIntake, "Lượng nước đã nạp vào trong hôm nay")
+                        @Html.TextBoxFor(model => model.WaterIntake, new { @class = "form-control", placeholder = "...(Đơn vị lít (nhập số thập phân))" })
+                        @Html.ValidationMessageFor(model => model.WaterIntake)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Steps, "Số bước chân bạn đã di chuyển trong hôm nay")
+                        @Html.TextBoxFor(model => model.Steps, new { @class = "form-control", placeholder = "..." })
+                        @Html.ValidationMessageFor(model => model.Steps)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.SleepDuration, "Thời gian bạn đã ngủ ngày hôm nay")
+                        @Html.TextBoxFor(model => model.SleepDuration, new { @class = "form-control", placeholder = "..." })
+                        @Html.ValidationMessageFor(model => model.SleepDuration)
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Xác nhận cập nhật</button>
+                }
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-success mt-3">@ViewBag.Message</div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

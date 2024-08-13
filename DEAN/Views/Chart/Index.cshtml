@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Charts";
+}
+
+<div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Số bước chân di chuyển</h4>
+                <canvas id="barChartSteps"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Lượng nước nạp vào cơ thể</h4>
+                <canvas id="barChartWaterIntake"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Thời gian ngủ </h4>
+                <canvas id="barChartSleepDuration"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/locale/vi.min.js"></script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    // Đặt ngôn ngữ của moment.js là tiếng Việt
+    moment.locale('vi');
+
+    var weeklyData = @Html.Raw(Json.Encode(ViewBag.WeeklyData));
+
+    // Định dạng ngày và thêm thông tin về thứ
+    var dates = weeklyData.map(function (data) {
+        return moment(data.Date).format('DD/MM/YYYY dddd');
+    });
+    var steps = weeklyData.map(function (data) { return data.Steps; });
+    var waterIntake = weeklyData.map(function (data) { return data.WaterIntake; });
+    var sleepDuration = weeklyData.map(function (data) { return data.SleepDuration; });
+
+    // Bar Chart for Steps
+    new Chart(document.getElementById('barChartSteps'), {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Số bước chân',
+                data: steps,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    min: 0
+                }
+            }
+        }
+    });
+
+    // Bar Chart for Water Intake
+    new Chart(document.getElementById('barChartWaterIntake'), {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Lượng nước (lít)',
+                data: waterIntake,
+                backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                borderColor: 'rgba(255, 159, 64, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    min: 0
+                }
+            }
+        }
+    });
+
+    // Bar Chart for Sleep Duration
+    new Chart(document.getElementById('barChartSleepDuration'), {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Thời gian ngủ (giờ)',
+                data: sleepDuration,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    min: 0
+                }
+            }
+        }
+    });
+});
+
+
+
+</script>

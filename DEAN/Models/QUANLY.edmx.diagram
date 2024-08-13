@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4831b6e82bd84a358e4ededa6ab00c43" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyModel.HealthStat" Width="1.5" PointX="7.625" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyModel.User" PointX="5.375" PointY="1.125" Width="1.5" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="QuanLyModel.FK__HealthSta__UserI__36B12243" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

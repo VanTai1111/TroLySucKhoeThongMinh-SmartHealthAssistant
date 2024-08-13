@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEAN", "DEAN\DEAN.csproj", "{A38DC7AD-AD2E-4FDB-A8A2-4A9E68474832}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A38DC7AD-AD2E-4FDB-A8A2-4A9E68474832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38DC7AD-AD2E-4FDB-A8A2-4A9E68474832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38DC7AD-AD2E-4FDB-A8A2-4A9E68474832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38DC7AD-AD2E-4FDB-A8A2-4A9E68474832}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5BD4BE7-1043-4F57-914C-060FEA2D233C}
+	EndGlobalSection
+EndGlobal
