@@ -13,11 +13,6 @@ A web-based health tracking and consulting application designed to help users mo
 - HTML/CSS/JS
 - Bot trained with medical textbooks and symptom datasets
 
-## Highlights
-
-- Collected and visualized daily health metrics (e.g., steps, calories, heart rate)
-- Built and integrated a chatbot trained on specialized medical books and common symptom FAQs
-- Designed the system for user-friendliness and accuracy in support
 
 ## Team Size
 4 members
