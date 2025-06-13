@@ -15,4 +15,4 @@ A web-based health tracking and consulting application designed to help users mo
 
 
 ## Team Size
-4 members
+3 members
