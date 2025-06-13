@@ -17,4 +17,4 @@
 
 ## Quy mô nhóm
 
-4 thành viên
+3 thành viên
